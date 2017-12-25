@@ -1,0 +1,191 @@
+
+
+img.marque{
+    border: 1px solid silver;
+}
+img.marque:hover{
+     border: 1px solid black;
+}
+#rechercher_off, #rechercher_on{
+    cursor: pointer;
+}
+img.zoom-img {
+    -webkit-transform: scale(1, 1);
+    -webkit-transition-timing-function: ease-out;
+    -webkit-transition-duration: 1000ms;
+    -moz-transform: scale(1, 1);
+    -moz-transition-timing-function: ease-out;
+    -moz-transition-duration: 1000ms;
+    margin: 0 auto;
+}
+img.montre{
+    width: 250px;
+}
+ 
+.produit:hover img.zoom-img{
+    -webkit-transform: scale(1.1);
+    -webkit-transition-timing-function: ease-out;
+    -webkit-transition-duration: 1000ms;
+    -moz-transform: scale(1.1);
+    -moz-transition-timing-function: ease-out;
+    -moz-transition-duration: 1000ms;
+    overflow: hidden;
+    /*cursor:pointer;*/
+}
+img.zoom-img:hover{
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+}
+.produit:hover .ico,
+.produit:hover .stock, 
+.produit:hover .rupture{
+    display:block;
+}
+.stock,
+.rupture{
+    display: none;
+    position: absolute;
+    /*top:25%;*/
+    top: 65px;
+    
+}
+.stock span,
+.rupture span{
+    color: #fff;
+    font-size: 12px;
+    font-weight: 400;
+    padding: 10px 25px;
+}
+
+.stock span{
+    background: #73B6E1;
+    /*border : 1px solid black;*/
+}
+.ico{
+    display: none;
+    position: absolute;
+    left : 10px;
+    top: 50px;
+    color: silver;
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.ico:hover{
+    color: black;
+}
+
+.add_panier{
+    top: 50px;
+}
+.start_2d{
+    top: 100px;
+}
+
+.start_3d{
+    top: 150px;
+}
+
+
+.fa-shopping-cart{/*//////////////////////////////////////////////////*/
+    
+}
+.rupture span{
+    background-color: #CD3232;
+}
+#panier{
+    font-size: 22px;
+}
+#input_rechercher{
+    border-radius: 10px;
+}
+#panier{
+    font-size: 16px;
+}
+.modal-backdrop
+{
+    opacity:0.6 !important;
+}
+
+.carousel-control-prev,
+.carousel-control-next
+{
+    font-size: 30px;
+    color:black !important;
+}
+.carousel-control-prev:hover,
+.carousel-control-next:hover{
+    font-size: 30px;
+    color:black !important;
+}
+
+#formulaire_inscription{
+    background-color: rgba(255, 255, 255, 0.25);
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border-radius: 10px;
+}
+
+.error{
+    color:#B94646;
+    font-weight: bolder;
+}
+
+#corpus{
+    background-color:rgba(255, 255, 255, 0.9);
+}
+
+/*.fa-play, .fa-pause, .fa-eercast, .fa-picture-o {
+    color:silver;
+}
+
+.fa-play:hover, .fa-pause:hover, .fa-eercast:hover, .fa-picture-o:hover {
+    color:black;
+}*/
+canvas{
+    margin:auto;
+    /*border:1px solid black;*/
+    height: 300px; 
+    width: 300px; 
+    display: block;
+    
+}
+/*style="cursor: pointer; margin: auto; width: 300px; height: 300px; position: relative; transform: scale(0.8);"*/
+
+/*#view370{
+    width:100%;
+    text-align:center;
+}*/
+.autorotate{
+    position:absolute;
+    right:50px;
+    bottom: 30%;
+}
+
+.autorotate_stop{
+    position:absolute;
+    right:25px;
+    bottom: 30%;
+}
+
+a.autorotate, .autorotate_stop{
+    text-decoration: none;
+    color:silver;
+    
+}
+a.autorotate:hover, .autorotate_stop:hover{
+    color:black;
+}
+
+.font-20{
+    font-size: 20px;
+}
+.font-25{
+    font-size: 25px;
+}
+.font-30{
+    font-size: 30px;
+}
+.font-35{
+    font-size: 35px;
+}
