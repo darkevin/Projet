@@ -28,6 +28,19 @@ class CommandeDB{
         }
     }
     
+    public function detail_commande($num){
+        try {
+            $resultset = $this->_db->prepare("select * from detail_commande(?)");
+            $resultset->execute(array($num));
+            return $resultset->fetchAll();
+        } catch (PDOException $e) { //Catch any errors
+            //echo "Could not connect to database: " . $e->getMessage() . "\n";
+            return NULL;
+        }
+    }
+    
+    
+    
     public function setDb(PDO $db) {
         $this->_db = $db;
     }

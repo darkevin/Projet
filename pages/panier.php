@@ -70,18 +70,6 @@
         </div>
     </div>
 </div>
-
-<!--<object id="msg" type="application/pdf" data="test1.pdf">
-Unable to open the PDF file.
-</object>-->
-
 <?php
-//echo"<pre>";
-//foreach($_SESSION['PANIER'] as $row){
-//    print_r($row);
-//}
-//echo "</pre>";
-
-
 }
 include ('modal_commande_ok.php'); 

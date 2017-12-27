@@ -10,7 +10,6 @@ $cnx = Connexion::getInstance($dsn, $user, $pass);
         <title>Watch For All</title>
         <link rel="stylesheet" href="./admin/lib/css/font-awesome-4.7.0/css/font-awesome.min.css" type="text/css">
         <link rel="stylesheet" href="admin/lib/css/bootstrap-4.0.0-beta.2-dist/css/bootstrap.min.css" type="text/css">
-        <link href="typeaheadjs.css" rel="./admin/lib/css/stylesheet">
         <link rel="stylesheet" href="./admin/lib/css/style.css" type="text/css" >
         <link rel="stylesheet" href="./admin/lib/css/style_panier.css" type="text/css" >
     </head>
@@ -32,6 +31,7 @@ $cnx = Connexion::getInstance($dsn, $user, $pass);
             print"Oups.. La page demandée n'existe pas !  " . $path;
         }
         ?>
+        
         <script src="admin/lib/js/popper.min.js" ></script>
         <script src="admin/lib/js/jquery-3.2.1.min.js"></script>
         <script src="admin/lib/js/messagesJqueryVal.js"></script>

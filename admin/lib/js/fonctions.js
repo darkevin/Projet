@@ -59,8 +59,6 @@ $(document).ready(function () {
         e.preventDefault();
         
         var id = $(this).parent().parent().attr("id");
-        //alert(id);
-        
         $("#"+id).hide();
         id = id.replace("3d", "2d");
         $("#"+id).show();
@@ -114,24 +112,41 @@ $(document).ready(function () {
         });
     });
     
+    $(".detail_commande").click(function (e){
+        e.preventDefault();
+        var num = $(this).attr("data-num");
+        $.ajax({
+            url:'./admin/lib/php/post_detail_commande.php',
+            type:'POST',
+            data: ({numfact: num})
+        }).done(function (data) {
+            $("#recap_commande").hide();
+            $("#detail_commande").empty().append(data);
+        }).fail(function(XMLHttpRequest, textStatus, errorThrown) {
+            alert(XMLHttpRequest);
+            alert(textStatus);
+            alert(errorThrown);
+        });
+    });
     
-//    $(".order").on("click", function(e){
-//        var montant = $("#montant").html();
-//        $.ajax({
-//            url:'./admin/lib/php/post_recap_commande.php',
-//            type:'POST',
-//            data: ({montant:montant})
-//        }).done(function (data) {
-////            $(".chyzy").empty.append(data);
-//            $(".chyzy").append(data);
-//            $("#ModalOrder").modal();
-//        }).fail(function(XMLHttpRequest, textStatus, errorThrown) {
-//            alert(XMLHttpRequest);
-//            alert(textStatus);
-//            alert(errorThrown);
-//        });
-//    });
-//    
+    
+    $(".pdf_commande").click(function (e){
+        e.preventDefault();
+        var num = $(this).attr("data-num");
+        $.ajax({
+            url:'./admin/lib/php/post_variable.php',
+            type:'POST',
+            data: ({numfact: num})
+        }).done(function () {
+            window.location.href = "admin/lib/php/script_pdf2.php";
+        }).fail(function(XMLHttpRequest, textStatus, errorThrown) {
+            alert(XMLHttpRequest);
+            alert(textStatus);
+            alert(errorThrown);
+        });
+    });
+    
+    
     
     $("#ModalLoginForm").on('shown.bs.modal', function() {
         $("#auth_email").focus();
@@ -144,7 +159,7 @@ $(document).ready(function () {
             url:'./admin/lib/php/post_deconnexion.php',
             type:'POST',
             success: function () {
-                location.reload();
+                window.location.href = "index.php";
             },
             error: function(XMLHttpRequest, textStatus, errorThrown) {
                 alert(XMLHttpRequest);
@@ -167,8 +182,6 @@ $("#panier").click(function(){
         alert(textStatus);
         alert(errorThrown);
     });
-    
-    
 });
 
 $(".trash")
@@ -219,30 +232,17 @@ $(".add_panier")
         });
     });
     
-    $("#generate_pdf").click(function(){
-        $.ajax({
-            url:'./admin/lib/php/script_pdf.php',
-//            url:'./admin/lib/php/createPDF.php',
-            type:'POST'
-        }).done(function (data) {
-            //$("#msg").attr("data", data);
-            //alert('./admin/'+data);
-            alert(data);
-            window.location.href = './admin/'+data;
-        }).fail(function(XMLHttpRequest, textStatus, errorThrown) {
-            alert(XMLHttpRequest);
-            alert(textStatus);
-            alert(errorThrown);
-        });
-    });
-    
-//    $(".changer_qte").change(function (e){
-//        e.preventDefault();
-//        var id = $(this).attr("id");
-//        var val = $("#"+id).find("option:selected").attr("value");
-//        $.post('./admin/lib/php/changer_qte.php', {indice: id.substring(1), valeur : val}, function (data) {
-//            //$("#total_panier").empty().append(data);
+//    $("#generate_pdf").click(function(){
+//        $.ajax({
+//            url:'./admin/lib/php/script_pdf.php',
+//            type:'POST'
+//        }).done(function (data) {
 //            alert(data);
+//            window.location.href = './admin/'+data;
+//        }).fail(function(XMLHttpRequest, textStatus, errorThrown) {
+//            alert(XMLHttpRequest);
+//            alert(textStatus);
+//            alert(errorThrown);
 //        });
 //    });
     

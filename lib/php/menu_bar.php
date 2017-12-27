@@ -22,7 +22,7 @@
                     <div  class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <?php if(isset($_SESSION['USER'])) {?>
                         <a id="deco" class="dropdown-item" href="#">Se déconnecter</a>
-                        <a id="commande" class="dropdown-item" href="#">Consulter mes commandes</a>
+                        <a id="commande" class="dropdown-item" href="index.php?page=commandes.php">Consulter mes commandes</a>
                         <?php } else {?>
                         <a class="dropdown-item" href="index.php?page=inscription.php">S'inscrire</a>
                         <a  class="auth dropdown-item" href="#">Se connecter</a>

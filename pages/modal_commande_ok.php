@@ -32,7 +32,7 @@ $adresse2 = $tab[6] . " " . $tab[7];
                     </div>
                 </div>
                 Votre commande sera traitée dans les plus brefs delais !<br>
-                Vous pouvez suivre l'état de vos commandes <a href="">ici</a>
+                Vous pouvez suivre l'état de vos commandes <a href="index.php?page=commandes.php">ici</a>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
