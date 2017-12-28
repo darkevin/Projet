@@ -129,8 +129,7 @@ $(document).ready(function () {
         });
     });
     
-    
-    $(".pdf_commande").click(function (e){
+    $("").click(function (e){
         e.preventDefault();
         var num = $(this).attr("data-num");
         $.ajax({
@@ -146,7 +145,24 @@ $(document).ready(function () {
         });
     });
     
-    
+    //pour que JS fonctionne sur du html ajouté par ajax
+    $(document).on("click", ".pdf_commande", function(e) {
+        e.preventDefault();
+        var num = $(this).attr("data-num");
+        if (e.shiftKey) var mode = 1;
+        else var mode = 2;
+        $.ajax({
+            url:'./admin/lib/php/post_variable.php',
+            type:'POST',
+            data: ({numfact : num, mode : mode})
+        }).done(function () {
+            window.location.href = "admin/lib/php/script_pdf2.php";
+        }).fail(function(XMLHttpRequest, textStatus, errorThrown) {
+            alert(XMLHttpRequest);
+            alert(textStatus);
+            alert(errorThrown);
+        });
+    });
     
     $("#ModalLoginForm").on('shown.bs.modal', function() {
         $("#auth_email").focus();
@@ -268,7 +284,6 @@ $(".add_panier")
         });
     });
     
-    
     $( window ).resize(function() {
         var x = $(".card").width();
         if(x<300){
@@ -283,3 +298,4 @@ $(".add_panier")
     e.preventDefault();
 });
 });
+

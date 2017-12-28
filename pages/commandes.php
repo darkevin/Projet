@@ -86,7 +86,7 @@ $tab = $DB->getListeCommandes($_SESSION['USER'][0]);
         <div class="card-footer">
             <div class="row">
                 <div class="py-1 col-12 col-sm-12 col-lg-11 text-lg-left text-center"><a href="index.php?page=produits.php" class="btn btn-outline-secondary ">Retour aux produits</a></div>
-                <div class="col-12 col-sm-12 col-lg-1 text-center"><a id="generate_pdf_" style="font-size: 25px;" href="./admin/lib/php/script_pdf2.php"><i class="fa fa-file-archive-o" aria-hidden="true"></i></a></div>
+                <div class="col-12 col-sm-12 col-lg-1 text-center"><a id="generate_pdf_" style="font-size: 25px;" href="./admin/lib/php/script_zip_pdf.php"><i class="fa fa-file-archive-o" aria-hidden="true"></i></a></div>
             </div>
         </div>
     </div>

@@ -4,3 +4,4 @@
 include ('settings.php');
 $data = filter_input_array(INPUT_POST);
 $_SESSION['pdf_var'] = $data['numfact'];
+$_SESSION['mode'] = $data['mode'];

@@ -78,9 +78,10 @@ $rs = $DB->getDetailCommande($numfact);
         </div>
         <div class="card-footer">
             <div class="row">
-                <div class="py-1 col-12 col-sm-12 col-lg-2  text-center "><a id="generate_pdf_" style="font-size: 25px;" href="./admin/lib/php/script_pdf.php"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></a></div>
+                <!--<div class="py-1 col-12 col-sm-12 col-lg-2  text-center "><a id="woop" style="font-size: 25px;" href="./admin/lib/php/script_pdf.php"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></a></div>-->
+                <div class="py-1 col-12 col-sm-12 col-lg-2  text-center "><a   style="font-size: 25px;"><i data-num="<?= $numfact ?>" class="fa fa-file-pdf-o pdf_commande" aria-hidden="true"></i></a></div>
                 <div class="py-1 col-12 col-sm-12 col-lg-2  text-center text-lg-right"><a href="index.php?page=produits.php" class="btn btn-outline-secondary ">Retour aux produits</a></div>
-                <div class="py-1 col-12 col-sm-12 col-lg-3  text-center"><a href="index.php?page=produits.php" class="btn btn-outline-secondary ">Retour aux produits</a></div>
+                <div class="py-1 col-12 col-sm-12 col-lg-3  text-center"><a href="index.php?page=commandes.php" class="btn btn-outline-secondary ">Retour aux commandes</a></div>
                 <div class="col-12 col-sm-12 col-lg-2 text-center">
                     <h1 class="display-4 font-30 text-center"><?= $q ?> articles</h1>
                 </div>
@@ -89,6 +90,3 @@ $rs = $DB->getDetailCommande($numfact);
         </div>
     </div>
 </div>
-<?php echo "<pre>";
-print_r($rs);
-echo "</pre>";
