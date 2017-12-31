@@ -17,7 +17,8 @@ $cnx = Connexion::getInstance($dsn, $user, $pass);
 
         <?php 
 
-        $menubar = "./lib/php/menu_bar.php"; file_exists($menubar) AND include $menubar;
+        $menubar = "./lib/php/menu_bar.php"; 
+        file_exists($menubar) AND include $menubar;
         if (!isset($_SESSION['page']) || !isset($_GET['page']) ) {
             $_SESSION['page'] = "./pages/accueil/accueil.php";
         }
@@ -31,7 +32,6 @@ $cnx = Connexion::getInstance($dsn, $user, $pass);
             print"Oups.. La page demandée n'existe pas !  " . $path;
         }
         ?>
-        
         <script src="admin/lib/js/popper.min.js" ></script>
         <script src="admin/lib/js/jquery-3.2.1.min.js"></script>
         <script src="admin/lib/js/messagesJqueryVal.js"></script>

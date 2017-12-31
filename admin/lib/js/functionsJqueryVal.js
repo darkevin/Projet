@@ -15,7 +15,7 @@ $(document).ready(function(){
         },
         submitHandler: function (form) {
         $.ajax({
-            url: './admin/lib/php/post_authentification.php',
+            url: './admin/lib/php/ajax/post_authentification.php',
             type: 'POST',
             data: $(form).serialize(),
             success: function (data) {
@@ -65,7 +65,7 @@ $(document).ready(function(){
         },
         submitHandler: function (form) {
             $.ajax({
-                url: './admin/lib/php/post_inscription.php',
+                url: './admin/lib/php/ajax/post_inscription.php',
                 type: 'POST',
                 data: $(form).serialize(),
                 success: function (data) {

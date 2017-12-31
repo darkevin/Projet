@@ -14,7 +14,7 @@
                     <br>
                     <a href="#" class="text-white">Our services</a>
                     <br>
-                    <a href="#" class="text-white">Testimonials</a>
+                    <a href="admin/index.php" class="text-white">Administration</a>
                 </ul>
             </div>
             <div class="p-5 col-md-4">

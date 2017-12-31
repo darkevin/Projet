@@ -15,7 +15,7 @@ $tab = $DB->getListeCommandes($_SESSION['USER'][0]);
                         <h4>#</h4>
                     </div>
                     <div class="col-12 col-sm-12 col-lg-2 text-center ">
-                        <h4>Informations</h4>
+                        <h4>Détails</h4>
                     </div>
                     <div class="col-12 col-sm-12 col-lg-4 text-center ">
                         <h4>Etat de la commande</h4>
@@ -47,7 +47,7 @@ $tab = $DB->getListeCommandes($_SESSION['USER'][0]);
                 
                 <div class="col-12 col-sm-12 col-lg-2 text-lg-center">
                     <h4 class="display-4 font-20">
-                        <b class="d-lg-none" >Informations : </b>
+                        <b class="d-lg-none" >Détails : </b>
                         <a data-num="<?= $commande[0] ?>" class="detail_commande" href="">Détails</a>
                     </h4>
                 </div>

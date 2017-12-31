@@ -9,5 +9,16 @@
         include('lib/php/autoload.php');
     }  
     else if (file_exists('DBConnectPgSql.php')){
-    include('DBConnectPgSql.php');
-    include('autoload.php');}
+        include('DBConnectPgSql.php');
+        include('autoload.php');
+    }
+    else if (file_exists('../DBConnectPgSql.php')){
+        include('../DBConnectPgSql.php');
+        include('../autoload.php');
+    } else{
+        echo "impossible de charger admin_liste_include";
+    }
+    
+    
+    
+    

@@ -98,7 +98,7 @@ $(document).ready(function () {
     
     $(".order").click(function(e){
         $.ajax({
-            url:'./admin/lib/php/post_recap_commande.php',
+            url:'./admin/lib/php/ajax/post_recap_commande.php',
             type:'POST',
             dataType: 'json'
         }).done(function (data) {
@@ -116,7 +116,7 @@ $(document).ready(function () {
         e.preventDefault();
         var num = $(this).attr("data-num");
         $.ajax({
-            url:'./admin/lib/php/post_detail_commande.php',
+            url:'./admin/lib/php/ajax/post_detail_commande.php',
             type:'POST',
             data: ({numfact: num})
         }).done(function (data) {
@@ -133,7 +133,7 @@ $(document).ready(function () {
         e.preventDefault();
         var num = $(this).attr("data-num");
         $.ajax({
-            url:'./admin/lib/php/post_variable.php',
+            url:'./admin/lib/php/ajax/post_variable.php',
             type:'POST',
             data: ({numfact: num})
         }).done(function () {
@@ -152,7 +152,7 @@ $(document).ready(function () {
         if (e.shiftKey) var mode = 1;
         else var mode = 2;
         $.ajax({
-            url:'./admin/lib/php/post_variable.php',
+            url:'./admin/lib/php/ajax/post_variable.php',
             type:'POST',
             data: ({numfact : num, mode : mode})
         }).done(function () {
@@ -172,7 +172,7 @@ $(document).ready(function () {
     $("#deco").click(function(e){
         e.preventDefault();
         $.post({
-            url:'./admin/lib/php/post_deconnexion.php',
+            url:'./admin/lib/php/ajax/post_deconnexion.php',
             type:'POST',
             success: function () {
                 window.location.href = "index.php";
@@ -187,7 +187,7 @@ $(document).ready(function () {
 
 $("#panier").click(function(){
     $.ajax({
-        url:'./admin/lib/php/post_aff_panier.php',
+        url:'./admin/lib/php/ajax/post_aff_panier.php',
         type:'POST'
     }).done(function (data) {
         $("#liste_panier").empty().append(data);
@@ -209,7 +209,7 @@ $(".trash")
     .on('click', function () {
         var n = $(this).attr("id");
         $.ajax({
-            url:'./admin/lib/php/post_del_item.php',
+            url:'./admin/lib/php/ajax/post_del_item.php',
             type:'POST',
             data: ({num_ligne: n})
         }).done(function (data) {
@@ -233,7 +233,7 @@ $(".add_panier")
     .on('click', function () {
         var img_print = $(this).parent().attr("id");
         $.ajax({
-            url:'./admin/lib/php/post_panier.php',
+            url:'./admin/lib/php/ajax/post_panier.php',
             type:'POST',
             data: ({img_print: img_print})
         }).done(function (data) {
@@ -271,7 +271,7 @@ $(".add_panier")
             type:'POST',
             data: ({indice: i, valeur : val}),
             dataType: 'json',
-            url:'./admin/lib/php/changer_qte.php'
+            url:'./admin/lib/php/ajax/changer_qte.php'
         }).done(function (data) {
             $("#total_panier").empty().append(data["total"]);
             $("#subtotal_"+i).empty().append(data["subtotal"]);
@@ -293,9 +293,5 @@ $(".add_panier")
         }  
     });
     
-    $("#myDIV").on('mousewheel', '.owl-stage', function (e) {
-    alert("ok");
-    e.preventDefault();
-});
 });
 

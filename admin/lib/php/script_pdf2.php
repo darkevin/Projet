@@ -1,5 +1,4 @@
 <?php
-function first($str){return explode('_', $str)[0].'_1';}
 include ('settings.php');
 require __DIR__.'/vendor/autoload.php';
 use Spipu\Html2Pdf\Html2Pdf;

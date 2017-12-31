@@ -1,6 +1,5 @@
 <?php
 
-function first($str){return explode('_', $str)[0].'_1';}
 include ('settings.php');
 require __DIR__.'/vendor/autoload.php';
 use Spipu\Html2Pdf\Html2Pdf;
@@ -130,17 +129,6 @@ foreach($source as $num){
     $html2pdf->writeHTML($css.$table_start.implode(" ", $produits).$table_end.$details.$info);
     $html2pdf->output($filename, 'F');
 }
-
-//$zip = new ZipArchive;
-//if ($zip->open('test_new.zip', ZipArchive::CREATE) === TRUE)
-//{
-//    // Add files to the zip file
-//    $zip->addFile('test.pdf');
-//    $zip->close();
-//} else {
-//    echo "Problem";
-//}
-
 
 $zipArchive = new ZipArchive();
 if ($zipArchive->open('mes_commandes.zip', ZIPARCHIVE::CREATE)){
