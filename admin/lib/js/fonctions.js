@@ -1,21 +1,9 @@
 $(document).ready(function () {
     
+    $("#fermerModalSearch").click(function(e){
+        $('#ModalSearch .close').click();
+    });
     $(".player").css( "display", "none" );
-    $("#barre_rechercher").hide();
-    $("#rechercher_off").click(function () {
-        $("#barre_menu").hide();
-        $("#barre_rechercher").show();
-        $("#input_rechercher").focus();
-    });
-
-    $("#rechercher_on").click(function () {
-        $("#barre_menu").show();
-        $("#barre_rechercher").hide();
-        $("#input_rechercher").val("");
-        $("#browsers").remove();
-
-    });
-
     $(".start_2d").mouseover(function () {
         var a = $(this).parent().attr("id");
         $.post('./admin/lib/php/single.php', {input: a}, function (data) {
@@ -67,24 +55,6 @@ $(document).ready(function () {
         
     });
     
-    //JS pour la barre rechercher
-    $("#input_rechercher").keyup(function (e) {
-        var code = e.which;
-        var recherche = $("#input_rechercher").val();
-        if (code === 13) {
-            alert('Votre recherche = ' + recherche);
-        }
-        if (code === 27) {
-            $("#barre_menu").show();
-            $("#barre_rechercher").hide();
-            $("#input_rechercher").val("");
-            $("#browsers").remove();
-        }
-        $.post('./admin/lib/php/rechercher.php', {input: recherche}, function (data) {
-            $("#feedback").html(data);
-        });
-
-    });
     
     $("#temp").click(function(){
         $('#recap_inscription').append("hello");
@@ -95,21 +65,34 @@ $(document).ready(function () {
         e.preventDefault();
         $("#ModalLoginForm").modal(); 
     });
+
+    $("#rechercher").click(function(e){
+        e.preventDefault();
+        $("#ModalSearch").modal(); 
+    });
+    
     
     $(".order").click(function(e){
+        e.preventDefault();
         $.ajax({
             url:'./admin/lib/php/ajax/post_recap_commande.php',
             type:'POST',
             dataType: 'json'
         }).done(function (data) {
+            
             $("#NUMCOMMANDE").empty().append(data["num"]);
             $("#MONTANT").empty().append(data["montant"]);
             $("#ModalOrder").modal();
+            
         }).fail(function(XMLHttpRequest, textStatus, errorThrown) {
             alert(XMLHttpRequest);
             alert(textStatus);
             alert(errorThrown);
         });
+    });
+    
+    $('#ModalOrder').on('hidden.bs.modal', function () {
+        location.reload();
     });
     
     $(".detail_commande").click(function (e){
@@ -262,6 +245,32 @@ $(".add_panier")
 //        });
 //    });
     
+    $(".changer_qte2").click(function(){
+        $(".changer_qte2").blur();
+    });
+    $(".changer_qte2").change(function (e){
+        
+        $(".changer_qte2").blur();
+        var id = $(this).attr("id");
+        var val = $("#"+id).val();
+        $.ajax({
+            type:'POST',
+            data: ({indice: id, valeur : val}),
+            dataType: 'json',
+            url:'./admin/lib/php/ajax/changer_qte.php'
+        }).done(function (data) {
+            $("#total_panier").empty().append(data["total"]);
+            $("#subtotal_"+id).empty().append(data["subtotal"]);
+//            data["total"]
+//            data["subtotal"]
+        }).fail(function(XMLHttpRequest, textStatus, errorThrown) {
+            alert(XMLHttpRequest);
+            alert(textStatus);
+            alert(errorThrown);
+        });
+        
+    });
+    
     $(".changer_qte").change(function (e){
         var id = $(this).attr("id");
         var i = id.substring(1);
@@ -293,5 +302,8 @@ $(".add_panier")
         }  
     });
     
+    $('input[type="file"]').change(function(e){
+            var fileName = e.target.files[0].name;
+            $("#msg_upload").empty().html('Fichier "' + fileName +  '" selectionné !');
+    });
 });
-

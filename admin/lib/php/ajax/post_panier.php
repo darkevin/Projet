@@ -13,7 +13,13 @@ $valeur = $data['img_print'];
 
 foreach($_SESSION['MONTRES'] as $montre){
     if($valeur == $montre['img_print']){
-        if(!in_array($montre['id_montre'], $liste_id)){
+        if($montre['stock'] == 0){
+            echo "Produit épuisé !&&";
+            echo '<img src="images/montres/'.first($montre['img_print']).'.jpg" style="width:150px;"/>';
+            echo "Désolé ce produit n'est plus disponible !";
+            return;
+        }
+        else if(!in_array($montre['id_montre'], $liste_id)){
             array_push($panier, $montre);
             $msg = "Produit ajouté au panier !&&";
         } else{

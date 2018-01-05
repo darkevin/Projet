@@ -22,10 +22,7 @@
            function first($str){return explode('_', $str)[0].'_1';}
            $sum=0;
            $q=0;
-           foreach($_SESSION['PANIER'] as $item){ 
-               $tab = array("","","","","","");
-               $tab[$item['quantite']]="selected";
-               ?>
+           foreach($_SESSION['PANIER'] as $item){ ?>
             <!-- PRODUCT -->
             
             <div class="row" >
@@ -44,14 +41,15 @@
                 </div>
                 <div class="col-12 col-sm-12 col-md-3 text-center"  >
                     <h1 class="display-4 font-30">Quantité :</h1>
-                    <select  id="q<?= $q?>" class="changer_qte font-25" style="margin-right: 10px;" name="hour">
-                        <?php 
-                        for($i=1;$i<6;$i++){
-                            echo '<option value="'.$i.'" '.$tab[$i].'>'.$i.'</option>';
-                        }
-                        ?>
-                    </select>
-                    <i id="<?=$q++?>" class="fa fa-trash-o trash font-30" aria-hidden="true"></i>
+                    <input id="<?= $q?>" width="30px" onkeydown="return false" type="number" max="<?=$item['stock']?>" min="1" step="1" class="changer_qte2 lead" value="<?= $item['quantite'] ?>"/>
+<!--                    <select  id="q<?= $q?>" class="changer_qte font-25" style="margin-right: 10px;" name="hour">
+                        //<?php 
+//                        for($i=1;$i<6;$i++){
+//                            echo '<option value="'.$i.'" '.$tab[$i].'>'.$i.'</option>';
+//                        }
+//                        ?>
+                    </select>-->
+                    <i id="<?=$q++?>" class="fa fa-trash-o trash" aria-hidden="true"></i>
                 </div>
             </div>
             <hr>
@@ -65,7 +63,7 @@
                 <div class="col-12 col-sm-12 col-md-2 text-center"><a id="generate_pdf_" style="font-size: 25px;" href="./admin/lib/php/script_pdf.php"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></a></div>
                 <div class="py-1 col-12 col-sm-12 col-md-4 text-md-right text-center"><a href="index.php?page=produits.php" class="btn btn-outline-secondary ">Retour aux produits</a></div>
                 <div class="col-12 col-sm-12 col-md-3  text-center"><h6 class="display-4" style="font-size: 35px;"><b id="total_panier"><span id="montant"><?= $_SESSION['TOTAL']?></span>€</b></h6></div>
-                <div class="py-1 col-12 col-sm-12 col-md-3 text-center"><a class="<?= $str?> btn btn-outline-secondary ">Valider la commande</a></div>
+                <div class="py-1 col-12 col-sm-12 col-md-3 text-center"><a href="" class="<?= $str?> btn btn-outline-secondary ">Valider la commande</a></div>
             </div>
         </div>
     </div>
@@ -73,3 +71,6 @@
 <?php
 }
 include ('modal_commande_ok.php'); 
+//echo"<pre>";
+//var_dump($_SESSION['PANIER']);
+//echo "</pre>";

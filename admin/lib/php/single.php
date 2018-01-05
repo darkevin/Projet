@@ -7,12 +7,10 @@ $b = $tab[1]+1;
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Gallerie Photos</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
+            <div class="card-body">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            
+
             <div class="py-5 text-white">
                 <div class="container">
                     <div class="row">
@@ -20,11 +18,11 @@ $b = $tab[1]+1;
                             <div id="carousel" class="carousel slide" data-ride="carousel">
                                 <div class="carousel-inner" role="listbox">
                                     <div class="carousel-item active">
-                                        <img  class="mx-auto d-block" src="images/montres/<?=$a.'_1'?>.jpg" data-holder-rendered="true">
+                                        <img  class="mx-auto d-block img-fluid" src="images/montres/<?=$a.'_1'?>.jpg" data-holder-rendered="true">
                                     </div>
                                     <?php for ($i=2; $i<$b; $i++){ ?>
                                         <div class="carousel-item">
-                                            <img  class="mx-auto d-block" src="images/montres/<?=$a.'_'.$i?>.jpg" data-holder-rendered="true">
+                                            <img  class="mx-auto d-block img-fluid" src="images/montres/<?=$a.'_'.$i?>.jpg" data-holder-rendered="true">
                                         </div>
                                     <?php } ?>
                                 </div>
@@ -35,6 +33,7 @@ $b = $tab[1]+1;
                     </div>
                 </div>
             </div>
+                </div>
         </div>
     </div>
 </div>       

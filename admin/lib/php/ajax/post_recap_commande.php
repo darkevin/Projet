@@ -17,5 +17,7 @@ echo json_encode(
         )
      );
 
+unset($_SESSION['TOTAL']);
+unset($_SESSION['PANIER']);
 
 

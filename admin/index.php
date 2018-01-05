@@ -1,6 +1,6 @@
 <?php
 include ('lib/php/settings.php');
-$_SESSION['admin']=1;
+//$_SESSION['admin']=1;
 ?>
 <!DOCTYPE html>
 <html>
@@ -15,21 +15,28 @@ $_SESSION['admin']=1;
     </head>
     
     <body>
-        <?php 
-            $menubar = "lib/php/menu_bar.php"; 
-            file_exists($menubar) AND include $menubar;
-            if (!isset($_SESSION['page']) || !isset($_GET['page']) ) {
-                $_SESSION['page'] = "./pages/accueil_admin.php";
-            }
-            if (isset($_GET['page'])) {
-                $_SESSION['page'] = "./pages/" . $_GET['page'];
-            }
-            $path = "./pages/" . $_SESSION['page'];
-            if (file_exists($_SESSION['page'])) {
-                include $_SESSION['page'];
-            } else {
-                print"Oups.. La page demandée n'existe pas !  " . $path;
-            }
+        <?php
+        $menubar = "lib/php/menu_bar.php"; 
+        file_exists($menubar) AND include $menubar;
+        if (!isset($_SESSION['admin'])) { // pas connecté en admin
+            $_SESSION['page_admin'] = "./pages/admin_login.php";
+        } else { //connecté en admin
+//            if (!isset($_SESSION['page_admin'])) {
+//                $_SESSION['page_admin'] = "./pages/accueil_admin.php";
+//            } else {
+                if (isset($_GET['page'])) {
+                    $_SESSION['page_admin'] = "./pages/" . $_GET['page'];
+                } else{
+                    $_SESSION['page_admin'] = "./pages/accueil_admin.php";
+                }
+//            }
+        }
+       // print $_SESSION['page_admin'];  
+        if (file_exists($_SESSION['page_admin'])) {
+            include $_SESSION['page_admin'];
+        } else {
+            print "OUPS!!!!!";
+        }
         ?>
         
         <script src="lib/js/popper.min.js" ></script>

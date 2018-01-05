@@ -8,17 +8,38 @@ class VueMontresDB {
         $this->_db = $_db;
     }
 
-    function getVueMontres() {
+    // récupérer les details des montres pour nourrir la boutique
+    function getVueMontres($tab) {
         try {
-            $query = "SELECT * FROM vue_montre";
+            if(empty($tab)){
+                $query = "SELECT * FROM vue_montre";
+            } else{
+                $query = "SELECT * FROM rechercher(?,?,?)";
+            }
+            
+            $resultset = $this->_db->prepare($query);
+            $resultset->execute($tab);
+            return $resultset->fetchAll(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+//            print ">>>".$e->getMessage();
+        }
+    }
+    
+    function getListeMarque(){
+        try {
+            $query = "select * from marque";
             $resultset = $this->_db->prepare($query);
             $resultset->execute();
-            return $resultset->fetchAll();
+            return $resultset->fetchAll(PDO::FETCH_NUM);
         } catch (PDOException $e) {
             print $e->getMessage();
         }
     }
-    
+    /**
+     * Permet de convertir un simple array en array 2D avec 3 colonnes
+     * Pour permettre d'ajouter de façon itérative des row bootsrap
+     * avec 3 élément par row
+     */
     function getTableau2D($data){
         $size = count($data);
         $reste = $size%3;

@@ -1,4 +1,6 @@
-
+.red{
+    color : red;
+}
 
 img.marque{
     border: 1px solid silver;
@@ -6,8 +8,16 @@ img.marque{
 img.marque:hover{
      border: 1px solid black;
 }
-#rechercher_off, #rechercher_on{
+#rechercher{
     cursor: pointer;
+}
+
+#corpus_search{
+    background-image: url(../../../images/rechercher-bg.jpg);
+    /*background-color: red;*/
+}
+.modal-body-search{
+    padding:0;
 }
 img.zoom-img {
     -webkit-transform: scale(1, 1);
@@ -90,15 +100,21 @@ img.zoom-img:hover{
 .fa-shopping-cart{/*//////////////////////////////////////////////////*/
     
 }
+.trash{
+    font-size:30px;
+}
+input[type="number"] {
+   width:50px;
+   font-size: 25px;
+   padding-left:3px;
+}
 .rupture span{
     background-color: #CD3232;
 }
 #panier{
     font-size: 22px;
 }
-#input_rechercher{
-    border-radius: 10px;
-}
+
 #panier{
     font-size: 16px;
 }
@@ -120,7 +136,7 @@ img.zoom-img:hover{
 }
 
 #formulaire_inscription{
-    background-color: rgba(255, 255, 255, 0.25);
+    background-color: rgba(0, 0, 0, 0.5);
     padding-top: 25px;
     padding-bottom: 25px;
     border-radius: 10px;
@@ -192,4 +208,33 @@ a.autorotate:hover, .autorotate_stop:hover{
 
 .vertical-d-30{
     margin-top: 30px;
+}
+
+.custom-file-control:before{
+  content: "Parcourir";
+}
+
+.ajouter{
+    background-color: rgba(0, 0, 0, 0.5);
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border-radius: 10px;
+}
+
+.dropdown-menu{
+    white-space: normal;
+}
+
+a.croix{
+    position: absolute;
+    top:0px;
+    right:18px;
+    font-size: 35px;
+    text-decoration: none;
+    color:white;
+}
+
+#user_home{
+    color:white;
+    text-decoration: none;
 }

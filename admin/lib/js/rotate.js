@@ -104,7 +104,7 @@
             canvas = document.getElementById(options.canvasID);
             context = canvas.getContext('2d');
             //tx = canvas.width / options.imageCount;
-            tx = 200 / 72;
+            tx = 300 / 72;
 //view360.find('.autorotate').css({position:"absolute",right:"1%",bottom:'1%',display:'block',padding:'5px'});
             clear();
             load_images();

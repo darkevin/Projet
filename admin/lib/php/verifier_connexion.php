@@ -1,7 +1,7 @@
 <?php
 if (!isset($_SESSION['admin'])) {
-//    header ('Location:../../index.php');
-    echo "you are not an admin !";
-} else{
-    echo "you are an admin !";
+    ?>
+    <meta http-equiv = "refresh" content = "0;url=../index.php">
+    <?php
+    exit();
 }

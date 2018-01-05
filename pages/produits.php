@@ -1,15 +1,43 @@
+
 <?php
 
-function first($str) {
-    return explode('_', $str)[0] . '_1';
-}
-
 try {
+    $search = filter_input_array(INPUT_GET);
     $vue = new VueMontresDB($cnx);
-    $data = $vue->getVueMontres();
+    $data = $vue->getVueMontres(rechercher($search));
+    if(empty($data)){ ?>
+        <div class="py-5 text-white" style="background-image: url(images/background_form.jpg); height: 100vh;}">
+            <div class="container">
+                    <div class="col-md-10 mx-auto ajouter">
+                        <a class="croix lead" href="index.php">x</a>
+                        <h1 class="text-gray-light text-light display-4 text-center">Aucun produit trouvé !</h1>
+                        <p class="lead mb-4 text-light text-center">Vous pouvez choisir l'une de nos catégories ci-dessous.</p>
+
+                        <div class="row py-3">
+                            <div class="col-md-4 text-center text-center">
+                                <b class=" lead font-30 ">Pour hommes</b>
+                                <a href="index.php?page=produits.php&cat=h"><img class="img-fluid d-block w-100 border border-primary" src="images/man.jpg" ></a>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <b class=" lead font-30 ">Pour femmes</b>
+                                <a href="index.php?page=produits.php&cat=f"><img class="img-fluid d-block w-100 border border-primary" src="images/woman.jpg" ></a>
+
+                            </div>
+                            <div class="col-md-4 text-center ">
+                                <b class=" lead font-30 ">Toutes nos marques</b>
+                                <a href="index.php?page=produits.php"><img class="img-fluid d-block w-100 border border-primary" src="images/brands.jpg" ></a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <?php } else {
     $_SESSION['MONTRES'] = $data;
     $container = $vue->getTableau2D($data);
-
+    
     echo '<div class="container">';
     foreach ($container as $row) {
         echo '<div class=" row py-3">';
@@ -43,10 +71,10 @@ try {
         echo "</div>";
     }
     echo"</div>";
+    }
 } catch (PDOException $e) {
     print $e->getMessage();
 }
-//   echo"<pre>";print_r($_SESSION['PANIER']); echo"</pre>";
 ?>
 
 <div id="div_modal"></div>
@@ -69,19 +97,28 @@ try {
     </div>
 </div>
 
-<!--<style>
-    #myDIV {
-        border: 1px solid black;
-        width: 200px;
-        height: 100px;
-        overflow: scroll;
+<?php
+
+function rechercher($search){
+    $tab = array();
+    if(isset($search['brand'] )){
+        array_push($tab, $search['brand']);
+    } else{
+        array_push($tab, '%');
     }
-</style>
+    if(isset($search['cat'] )){
+        array_push($tab, $search['cat']);
+    } else{
+        array_push($tab, '%');
+    }
+    if(isset($search['sort'] )){
+        array_push($tab, $search['sort']);
+    } else{
+        array_push($tab, 1);
+    }
+    return $tab;
+}
 
-<div id="myDIV">
-    <p class="owl-stage">SCROLL MY ASS</p>
-</div>
-<p id="demo"></p>
-<script>
-
-</script>-->
+function first($str) {
+    return explode('_', $str)[0] . '_1';
+}

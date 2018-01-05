@@ -7,7 +7,7 @@ class CommandeDB{
         $this->setDb($db);
     }
     
-    public function add($commande) {
+    public function add($commande) { // ajouter une commande
         try {
             $st = $this->_db->prepare("select create_commande(?,?)");
             $st->execute($commande);
@@ -17,29 +17,25 @@ class CommandeDB{
         }
     }
     
-    public function add_ligne($param){
+    public function add_ligne($param){ // ajouter une ligne (d'une commande)
         try {
             $st = $this->_db->prepare("select add_ligne(?,?,?)");
             $st->execute($param);
             return true;
         } catch (PDOException $e) { //Catch any errors
-            //echo "Could not connect to database: " . $e->getMessage() . "\n";
             return false;
         }
     }
     
-    public function detail_commande($num){
+    public function detail_commande($num){ // récupérer toutes lignes d'une commande
         try {
             $resultset = $this->_db->prepare("select * from detail_commande(?)");
             $resultset->execute(array($num));
             return $resultset->fetchAll();
         } catch (PDOException $e) { //Catch any errors
-            //echo "Could not connect to database: " . $e->getMessage() . "\n";
             return NULL;
         }
     }
-    
-    
     
     public function setDb(PDO $db) {
         $this->_db = $db;

@@ -9,7 +9,7 @@
         <div class="collapse navbar-collapse text-center justify-content-end w-100 " id="navbar2SupportedContent">
             <ul id="barre_menu" class="navbar-nav">
                 <li class="nav-item bg-dark">
-                    <a id="rechercher_off" class="btn btn-default navbar-btn mx-2" ><i  class="fa fa-search text-primary" aria-hidden="true"></i></a>  
+                    <a id="rechercher" class="btn btn-default navbar-btn mx-2" ><i  class="fa fa-search text-primary" aria-hidden="true"></i></a>  
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link _dropdown-toggle"  href="" id="panier" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-shopping-bag" aria-hidden="true"></i> Panier</a>
@@ -37,14 +37,12 @@
 
             </ul>         
 
-            <div id="barre_rechercher" class="navbar-nav w-100">
-                <input class="form-control" list="browsers" id="input_rechercher" type="text" class="w-100" placeholder="Entrez votre recherche" spellcheck="false" >
-                <a  id="rechercher_on" class="btn btn-default navbar-btn mx-2" ><i class="fa fa-times text-primary" aria-hidden="true"></i></a>
-            </div>
             <div id="feedback"></div>
 
         </div>
     </div>
 </nav>
 
-<?php include ('modal_auth.php'); 
+<?php 
+include ('modal_auth.php'); 
+include ('modal_rechercher.php'); 

@@ -8,6 +8,7 @@ class VueCommandeDB {
         $this->_db = $_db;
     }
 
+    // récupérer les commandes d'un client sur base de l'id du client
     function getListeCommandes($idcli) {
         try {
             $query = "SELECT * FROM liste_commande(?)";
@@ -20,7 +21,7 @@ class VueCommandeDB {
         }
     }
     
-    
+    // récupérer la liste des numfact d'un client sur base de l'id du client 
     function getListeIdCommandes($idcli) {
         try {
             $query = "SELECT * FROM liste_id_commande(?)";
@@ -33,7 +34,7 @@ class VueCommandeDB {
         }
     }
     
-    
+    // récupérer les infos d'un commande (filtre sur une vue)
     function getDetailCommande($id) {
         try {
             $query = "SELECT * FROM detail_commande(?)";
@@ -47,6 +48,7 @@ class VueCommandeDB {
         return $data;
     }
     
+    // récupérer la date formatée en français d'une commande
     function getDateCommande($id){
         try {
             $query = "SELECT date_commande(?)";

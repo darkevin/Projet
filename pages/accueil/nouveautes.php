@@ -33,7 +33,7 @@
         <div class="align-self-center p-5 col-md-6">
           <h1 class="mb-4 text-dark">Nous vous proposons les dernières nouveautés !</h1>
           <p class="mb-5 text-dark">Watch For All propose a sa clientèle tous les nouveaux modèles des plus grands constructeurs. Découvrons ensemble ces petits bijoux technologiques.</p>
-          <a class="btn btn-lg btn-outline-light text-dark" href="#">Voir la galerie
+          <a class="btn btn-lg btn-outline-light text-dark" href="index.php?page=produits.php">Voir la galerie
             <br> </a>
         </div>
       </div>

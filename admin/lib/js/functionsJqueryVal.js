@@ -22,7 +22,7 @@ $(document).ready(function(){
                 if(data === "1"){
                     location.reload();
                 } else{
-                    alert("accès refusé");
+                    $("#auth_denied").empty().html("<br>Accès refusé !");
                 }
                 
                 //$("#compte").load(location.href + " #compte"); // refresh uniquement la zone 
@@ -70,7 +70,7 @@ $(document).ready(function(){
                 data: $(form).serialize(),
                 success: function (data) {
                     if(data === "1"){
-                        $(location).attr('href',"index.php");
+                        location.reload();
                     } else {
                         $('#recap_inscription').append("Erreur lors de l'inscription");
                         $('#modal_inscription').modal();
