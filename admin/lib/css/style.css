@@ -206,6 +206,10 @@ a.autorotate:hover, .autorotate_stop:hover{
     font-size: 35px;
 }
 
+.font-50{
+    font-size: 50px;
+}
+
 .vertical-d-30{
     margin-top: 30px;
 }

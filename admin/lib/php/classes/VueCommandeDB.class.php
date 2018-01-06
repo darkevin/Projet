@@ -62,5 +62,19 @@ class VueCommandeDB {
         return $data[0];
     }
     
+    function getRecapCommande($id){
+     try {
+            $query = "SELECT * from vue_commande where numfact = ?";
+            $resultset = $this->_db->prepare($query);
+            $resultset->bindValue(1, $id);
+            $resultset->execute();
+            $data = $resultset->fetch();
+            return $data;
+        } catch (PDOException $e) {
+            return null;
+        }
+        
+    }
+    
 }
 

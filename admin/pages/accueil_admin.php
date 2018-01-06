@@ -1,5 +1,5 @@
 <?php
-//include '../lib/php/verifier_connexion.php';
+include './lib/php/verifier_connexion.php';
 ?>
 
 <div class="py-5">
@@ -19,7 +19,7 @@
             <div class="text-center col-4"><i class="fa fa-pencil-square-o fa-5x" aria-hidden="true"></i></div>
             <div class="col-8">
               <h5 class="mb-3"><b><a href="index.php?page=modifier.php">Modifier l'état d'une commande</a></b></h5>
-              <p class="my-1">Permet de changer l'état d'une commande pour en notifier le client.</p>
+              <p class="my-1">Permet de changer l'état d'une commande sur base de son numéro de facture.</p>
             </div>
           </div>
         </div>

@@ -37,6 +37,16 @@ class CommandeDB{
         }
     }
     
+    public function changer_etat($param){ // changer l'état d'une commande
+        try {
+            $resultset = $this->_db->prepare("select changer_etat(?,?)");
+            $resultset->execute($param);
+            return true;
+        } catch (PDOException $e) { //Catch any errors
+            return false;
+        }
+    }
+
     public function setDb(PDO $db) {
         $this->_db = $db;
     }

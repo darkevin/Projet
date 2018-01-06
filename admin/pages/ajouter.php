@@ -31,5 +31,5 @@ include './lib/php/verifier_connexion.php';
         </form>
       </div>
     </div>
-  </div><br><br><br><br>
+  </div>
 </div>
