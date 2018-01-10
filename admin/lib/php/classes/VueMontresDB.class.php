@@ -12,7 +12,7 @@ class VueMontresDB {
     function getVueMontres($tab) {
         try {
             if(empty($tab)){
-                $query = "SELECT * FROM vue_montre";
+                $query = "select * from vue_montre";
             } else{
                 $query = "SELECT * FROM rechercher(?,?,?)";
             }
@@ -27,7 +27,7 @@ class VueMontresDB {
     
     function getListeMarque(){
         try {
-            $query = "select * from marque";
+            $query = "select * from marque order by nom";
             $resultset = $this->_db->prepare($query);
             $resultset->execute();
             return $resultset->fetchAll(PDO::FETCH_NUM);

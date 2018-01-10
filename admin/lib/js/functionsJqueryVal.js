@@ -1,5 +1,8 @@
 $(document).ready(function(){
 
+$("span[id]").click(function () {
+    alert("coucou");
+});
     //pour pouvoir utiliser regex
     $.validator.addMethod("regex", function (value, element, regexpr) {
         return regexpr.test(value);

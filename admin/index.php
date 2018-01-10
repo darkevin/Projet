@@ -10,8 +10,10 @@ include ('lib/php/settings.php');
         <title>Watch For All</title>
         <link rel="stylesheet" href="lib/css/font-awesome-4.7.0/css/font-awesome.min.css" type="text/css">
         <link rel="stylesheet" href="lib/css/bootstrap-4.0.0-beta.2-dist/css/bootstrap.min.css" type="text/css">
+        <link rel="stylesheet" href="lib/css/jquery.dataTables.min.css" type="text/css">
         <link rel="stylesheet" href="lib/css/style.css" type="text/css" >
         <link rel="stylesheet" href="lib/css/style_panier.css" type="text/css" >
+
     </head>
     
     <body>
@@ -43,10 +45,13 @@ include ('lib/php/settings.php');
         <script src="lib/js/jquery-3.2.1.min.js"></script>
         <script src="lib/js/messagesJqueryVal.js"></script>
         <script src="lib/css/bootstrap-4.0.0-beta.2-dist/js/bootstrap.min.js"></script>
-        <script src="lib/js/fonctions.js"></script>
+        <script src="lib/js/fonctions_tab.js"></script>
         <script src="lib/js/jquery.validate.js"></script>
         <script src="lib/js/functionsJqueryVal.js" type="text/javascript"></script>
         <script src="lib/js/rotate.js" type="text/javascript" ></script>
+        <script src="lib/js/jquery.dataTables.min.js"></script>
+        <script src="lib/js/jquery.dataTables.min.js"></script>
+
     
     </body>
     

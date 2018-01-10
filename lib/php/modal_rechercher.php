@@ -1,6 +1,10 @@
 <?php
 $DB = new VueMontresDB($cnx);
 $rs = $DB->getListeMarque();
+$GET = filter_input_array(INPUT_GET); 
+$a = $GET['brand'] ?? ''; 
+$b = $GET['cat'] ?? ''; 
+$c = $GET['sort'] ?? ''; 
 ?>
 <div id="ModalSearch" class="modal fade">
     <div class="modal-dialog" role="document">
@@ -18,29 +22,35 @@ $rs = $DB->getListeMarque();
                             <select name="brand" class="form-control form-control-lg">
                                 <option class="lead" value="%">Toutes les marques</option>
                                 <?php foreach ($rs as $marque) { ?>
-                                    <option class="lead" value="<?= $marque[1] ?>"><?= $marque[1] ?></option>
+                                    <option class="lead" value="<?= $marque[1] ?>" <?= $a== $marque[1] ? 'selected':''?>><?= $marque[1] ?></option>
                                 <?php } ?>
                             </select>  
                         </div>
                         <div class="form-group text-dark lead"> 
                             <label>Catégorie :</label>
                             <select name="cat" class="form-control form-control-lg">
-                                <option class="lead" value="%">Hommes et Femmes</option>
-                                <option class="lead" value="h">Hommes</option>
-                                <option class="lead" value="f">Femmes</option>
+                                <option class="lead" value="%" <?= $b == '%' ? 'selected':''?>>Hommes et Femmes</option>
+                                <option class="lead" value="h" <?= $b == 'h' ? 'selected':''?>>Hommes</option>
+                                <option class="lead" value="f" <?= $b == 'f' ? 'selected':''?>>Femmes</option>
                             </select> 
                         </div>
                         <div class="form-group text-dark lead"> 
                             <label>Prix :</label>
                             <select name = "sort" class="form-control form-control-lg">
-                                <option class="lead" value="1">Ordre croissant</option>
-                                <option class="lead" value="-1">Ordre décroissant</option>
+                                <option class="lead" value="1"  <?= $c == '1'  ? 'selected':''?>>Ordre croissant</option>
+                                <option class="lead" value="-1" <?= $c == '-1' ? 'selected':''?>>Ordre décroissant</option>
                             </select> 
                         </div>
-                        <button type="submit" class="btn btn-primary float-right border border-secondary">Rechercher</button>
+                        <button type="submit" class="btn btn-primary float-right border border-silver">Rechercher</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<?php function check($a, $b){
+    if(isset($a)){
+        echo $b;
+    }
+}

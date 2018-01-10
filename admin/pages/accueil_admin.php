@@ -29,8 +29,8 @@ include './lib/php/verifier_connexion.php';
           <div class="row">
             <div class="text-center col-4"><i class="fa fa-database fa-5x" aria-hidden="true"></i></div>
             <div class="col-8">
-              <h5 class="mb-3"><b><a href="index.php?page=gerer.php">Gestion des stocks et des clients</a></b></h5>
-              <p class="my-1">Permet de mettre à jour les stocks et les informations des clients.</p>
+              <h5 class="mb-3"><b><a href="index.php?page=gerer.php">Gestion des stocks</a></b></h5>
+              <p class="my-1">Permet de mettre à jour les stocks.</p>
             </div>
           </div>
         </div>

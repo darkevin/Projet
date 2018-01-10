@@ -13,8 +13,7 @@ img.marque:hover{
 }
 
 #corpus_search{
-    background-image: url(../../../images/rechercher-bg.jpg);
-    /*background-color: red;*/
+    background-image: url(../../../images/search_bg.jpg);
 }
 .modal-body-search{
     padding:0;
@@ -97,7 +96,7 @@ img.zoom-img:hover{
 }
 
 
-.fa-shopping-cart{/*//////////////////////////////////////////////////*/
+.fa-shopping-cart{
     
 }
 .trash{
@@ -107,6 +106,15 @@ input[type="number"] {
    width:50px;
    font-size: 25px;
    padding-left:3px;
+}
+input[type="number"].changer_stock{
+    font-size: 18px;
+}
+.maj_stock{
+   min-height:800px;
+   background-image: url(../../images/background_add.jpg); 
+   background-repeat:no-repeat;
+   background-size:cover;
 }
 .rupture span{
     background-color: #CD3232;
@@ -242,3 +250,12 @@ a.croix{
     color:white;
     text-decoration: none;
 }
+
+.border-silver{
+    border-color : #D5D5D5 !important;
+}
+
+.hello{
+    margin:auto;
+}
+

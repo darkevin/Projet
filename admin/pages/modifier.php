@@ -81,19 +81,19 @@
 
 <?php function order_table($data){ ?>
     <table class="table">
-      <tr>
-        <th class="lead text-center"><b>Numfact</b></th>
-        <th class="lead text-center"><b>Numcli</b></th>
-        <th class="lead text-center"><b>Date</b></th>
-        <th class="lead text-center"><b>Etat de la commande</b></th>
-        <th class="lead text-center"><b>Montant</b></th>
-      </tr>
-      <tr>
-        <td class="lead text-center"><?= $data['numfact'] ?></td>
-        <td class="lead text-center"><?= $data['client'] ?></td>
-        <td class="lead text-center"><?= $data['to_char'] ?></td>
-        <td class="lead text-center"><?= $data['etat'] ?></td>
-        <td class="lead text-center"><?= $data['montant']."€" ?></td>
-      </tr>
-  </table>
+        <tr>
+            <th class="lead text-center"><b>Numfact</b></th>
+            <th class="lead text-center"><b>Numcli</b></th>
+            <th class="lead text-center"><b>Date</b></th>
+            <th class="lead text-center"><b>Etat de la commande</b></th>
+            <th class="lead text-center"><b>Montant</b></th>
+        </tr>
+        <tr>
+            <td class="lead text-center"><?= $data['numfact'] ?></td>
+            <td class="lead text-center"><?= $data['client'] ?></td>
+            <td class="lead text-center"><?= $data['to_char'] ?></td>
+            <td class="lead text-center"><?= $data['etat'] ?></td>
+            <td class="lead text-center"><?= $data['montant'] . "€" ?></td>
+        </tr>
+    </table>
 <?php } ?>

@@ -15,8 +15,9 @@
                 <div class="row">
                     <div class="col-md-12  py-3 text-center">
                         <div class="btn-group">
-                            <a class="btn btn-primary" href="index.php?page=inscription.php">S'inscrire</a>
+                            <a class="btn btn-primary" href="index.php?page=inscription.php" <?= isset($_SESSION['USER']) ? 'hidden' : '' ?>>S'inscrire</a>
                             <a class="btn text-dark btn-outline-primary" href="index.php?page=produits.php">Visitez la boutique !</a>
+                            <a class="btn btn-primary" href="index.php?page=commandes.php" <?= !isset($_SESSION['USER']) ? 'hidden' : '' ?>>Mes commandes</a>
                         </div>
                     </div>
                 </div>
