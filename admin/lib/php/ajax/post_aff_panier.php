@@ -8,7 +8,7 @@ if(empty($panier)){?>
 <?php } else {
 foreach($panier as $montre){
     ?>
-    <a class="dropdown-item" href="#"><img src="images/montres/<?= first($montre['img_print'])?>.jpg" style="width:75px;"/>
+    <a class="dropdown-item" href="index.php?page=panier.php"><img src="images/montres/<?= first($montre['img_print'])?>.jpg" style="width:75px;"/>
     <?= $montre['nom']." ".$montre['prix']."€"?></a>
 <?php } ?> <a class="dropdown-item text-center" href="index.php?page=panier.php">Consulter mon panier.</a> <?php
 }

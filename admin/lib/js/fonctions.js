@@ -112,22 +112,6 @@ $(document).ready(function () {
         });
     });
     
-    $("").click(function (e){
-        e.preventDefault();
-        var num = $(this).attr("data-num");
-        $.ajax({
-            url:'./admin/lib/php/ajax/post_variable.php',
-            type:'POST',
-            data: ({numfact: num})
-        }).done(function () {
-            window.location.href = "admin/lib/php/script_pdf2.php";
-        }).fail(function(XMLHttpRequest, textStatus, errorThrown) {
-            alert(XMLHttpRequest);
-            alert(textStatus);
-            alert(errorThrown);
-        });
-    });
-    
     //pour que JS fonctionne sur du html ajouté par ajax
     $(document).on("click", ".pdf_commande", function(e) {
         e.preventDefault();
@@ -302,8 +286,5 @@ $(".add_panier")
         }  
     });
     
-    $('input[type="file"]').change(function(e){
-            var fileName = e.target.files[0].name;
-            $("#msg_upload").empty().html('Fichier "' + fileName +  '" selectionné !');
-    });
+    
 });

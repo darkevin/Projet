@@ -5,4 +5,4 @@ $id = $data['id'];
 $new_stock = $data['valeur'];
 
 $DB = new MontreDB($cnx);
-$DB->updateDispo(array($id, $new_stock));
+$DB->updateStock(array($id, $new_stock));

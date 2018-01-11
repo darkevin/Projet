@@ -20,7 +20,7 @@ $(document).ready(function () {
             {"orderable": false},
             {"orderable": false}
     ]});
-    $(".changer_stock").change(function (e) {
+    $(document).on("change", ".changer_stock", function(e) {
         $(".changer_stock").blur();
         var id = $(this).attr("id");
         var val = $("#" + id).val();
@@ -47,6 +47,10 @@ $(document).ready(function () {
             alert(textStatus);
             alert(errorThrown);
         });
+    });
+    $('input[type="file"]').change(function(e){
+            var fileName = e.target.files[0].name;
+            $("#msg_upload").empty().html('Fichier "' + fileName +  '" selectionné !');
     });
 });
 

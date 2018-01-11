@@ -174,22 +174,20 @@ canvas{
     display: block;
     
 }
-/*style="cursor: pointer; margin: auto; width: 300px; height: 300px; position: relative; transform: scale(0.8);"*/
-
-/*#view370{
-    width:100%;
-    text-align:center;
-}*/
+.copyright{
+    position:relative;
+    background-color: red;
+}
 .autorotate{
     position:absolute;
-    right:50px;
-    bottom: 30%;
+    right:40px;
+    bottom: 12%;
 }
 
 .autorotate_stop{
     position:absolute;
-    right:25px;
-    bottom: 30%;
+    right:15px;
+    bottom: 12%;
 }
 
 a.autorotate, .autorotate_stop{
